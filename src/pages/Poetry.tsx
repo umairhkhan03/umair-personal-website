@@ -8,8 +8,8 @@ const Poetry = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="h-screen flex items-center justify-center px-6">
-        <h1 className="font-bold text-[15vw] md:text-[12vw] leading-none tracking-tight">
+      <section className="h-screen flex items-center justify-center px-6 overflow-hidden">
+        <h1 className="font-bold text-[28vw] md:text-[25vw] leading-none tracking-tight">
           POETRY
         </h1>
       </section>
