@@ -7,7 +7,7 @@ const Home = () => {
       
       {/* Hero Section */}
       <section className="h-screen flex items-center justify-center px-6 overflow-hidden">
-        <h1 className="text-hero font-bold uppercase tracking-tight leading-[0.85]">
+        <h1 className="text-hero font-bold uppercase tracking-tight leading-[0.85] text-center">
           UMAIR KHAN
         </h1>
       </section>

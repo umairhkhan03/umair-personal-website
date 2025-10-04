@@ -37,7 +37,7 @@ All colors MUST be HSL.
     --radius: 0;
     
     /* Typography scale */
-    --font-hero: 28vw;
+    --font-hero: 33.6vw;
     --font-heading: clamp(2rem, 5vw, 4rem);
     --font-body: clamp(1rem, 1.5vw, 1.125rem);
     --font-nav: 0.875rem;
