@@ -6,9 +6,9 @@ const Home = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="h-screen flex items-center justify-center px-6">
-        <h1 className="text-hero font-bold uppercase tracking-tight">
-          Umair
+      <section className="h-screen flex items-center justify-center px-6 overflow-hidden">
+        <h1 className="text-hero font-bold uppercase tracking-tight leading-[0.85]">
+          UMAIR KHAN
         </h1>
       </section>
 

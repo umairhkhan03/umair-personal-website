@@ -8,36 +8,36 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Pure minimalist palette - black on white */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    /* Pure minimalist palette - white on black */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 0%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 100%;
 
     --radius: 0;
     
     /* Typography scale */
-    --font-hero: 15vw;
+    --font-hero: 20vw;
     --font-heading: clamp(2rem, 5vw, 4rem);
     --font-body: clamp(1rem, 1.5vw, 1.125rem);
     --font-nav: 0.875rem;
