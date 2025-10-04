@@ -12,7 +12,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 right-0 z-50 p-5 md:p-8">
+    <nav className="fixed top-0 left-0 z-50 p-5 md:p-8">
       <NavigationMenu>
         <NavigationMenuList className="gap-6 md:gap-8 text-nav">
           {/* Create Dropdown */}
