@@ -9,7 +9,6 @@ import WatchList from "./pages/WatchList";
 import Life from "./pages/Life";
 import Poetry from "./pages/Poetry";
 import PoemDetail from "./pages/PoemDetail";
-import ReadingList from "./pages/ReadingList";
 import Blog from "./pages/Blog";
 import Building from "./pages/Building";
 import NotFound from "./pages/NotFound";
@@ -29,7 +28,6 @@ const App = () => (
           <Route path="/life" element={<Life />} />
           <Route path="/poetry" element={<Poetry />} />
           <Route path="/poetry/:slug" element={<PoemDetail />} />
-          <Route path="/reading-list" element={<ReadingList />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/building" element={<Building />} />
           <Route path="*" element={<NotFound />} />
