@@ -75,12 +75,12 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link
-                    to="/blog"
+                    to="/reading-list"
                     className={`block hover:opacity-60 transition-opacity ${
-                      location.pathname === "/blog" ? "opacity-60" : "opacity-100"
+                      location.pathname === "/reading-list" ? "opacity-60" : "opacity-100"
                     }`}
                   >
-                    blog
+                    reading list
                   </Link>
                 </li>
                 <li>
