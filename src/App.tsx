@@ -11,6 +11,7 @@ import Poetry from "./pages/Poetry";
 import PoemDetail from "./pages/PoemDetail";
 import Blog from "./pages/Blog";
 import Building from "./pages/Building";
+import ReadingList from "./pages/ReadingList";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/poetry/:slug" element={<PoemDetail />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/building" element={<Building />} />
+          <Route path="/reading-list" element={<ReadingList />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
