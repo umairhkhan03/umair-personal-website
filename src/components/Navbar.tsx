@@ -18,7 +18,7 @@ const Navbar = () => {
           {/* Create Dropdown */}
           <NavigationMenuItem>
             <NavigationMenuTrigger className="bg-transparent hover:opacity-60 data-[state=open]:opacity-60 text-nav p-0 h-auto">
-              thing i create.
+              things i create.
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="flex flex-col gap-2 p-4 w-[200px] bg-background border border-border">
