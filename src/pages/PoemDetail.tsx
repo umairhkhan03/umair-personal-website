@@ -1,5 +1,5 @@
-import Navbar from "@/components/Navbar";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import ContentDetailPlaceholder from "@/components/content/ContentDetailPlaceholder";
 
 const PoemDetail = () => {
   const { slug } = useParams();
@@ -10,22 +10,11 @@ const PoemDetail = () => {
     .join(' ') || '';
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      
-      <section className="min-h-screen flex items-center justify-center px-6">
-        <div className="text-center max-w-2xl">
-          <h1 className="text-heading font-bold mb-6">Coming Soon</h1>
-          <p className="text-body text-muted-foreground mb-8">{formattedTitle}</p>
-          <Link 
-            to="/poetry" 
-            className="text-nav underline hover:opacity-60 transition-opacity"
-          >
-            Back to Poetry
-          </Link>
-        </div>
-      </section>
-    </div>
+    <ContentDetailPlaceholder 
+      title={formattedTitle}
+      backPath="/poetry"
+      backLabel="Back to Poetry"
+    />
   );
 };
 
