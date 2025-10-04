@@ -1,4 +1,0 @@
-project_id = "podmwcmabdwhoexvnthk"
-
-[functions.fetch-goodreads]
-verify_jwt = false
