@@ -87,4 +87,108 @@ All colors MUST be HSL.
     font-size: var(--font-nav);
     letter-spacing: 0.02em;
   }
+
+  /* Animated underline for navigation items */
+  .nav-item-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: hsl(var(--foreground));
+    transition: width 0.3s ease-in-out;
+    transform-origin: right;
+  }
+
+  .nav-item-underline:hover::after,
+  .nav-item-underline[data-state="open"]::after {
+    width: 100%;
+    transform-origin: left;
+  }
+
+  /* Clock Animation */
+  .clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .clock {
+    width: 120px;
+    height: 120px;
+    border: 2px solid hsl(var(--foreground));
+    border-radius: 50%;
+    position: relative;
+    background-color: transparent;
+  }
+
+  .clock-hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+    background-color: hsl(var(--foreground));
+    border-radius: 2px;
+  }
+
+  .hour-hand {
+    width: 3px;
+    height: 30px;
+    margin-left: -1.5px;
+    animation: rotate-hour 43200s linear infinite;
+  }
+
+  .minute-hand {
+    width: 2px;
+    height: 40px;
+    margin-left: -1px;
+    animation: rotate-minute 3600s linear infinite;
+  }
+
+  .second-hand {
+    width: 1px;
+    height: 45px;
+    margin-left: -0.5px;
+    background-color: hsl(0 0% 60%);
+    animation: rotate-second 60s linear infinite;
+  }
+
+  .clock-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: hsl(var(--foreground));
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes rotate-hour {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes rotate-minute {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes rotate-second {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }

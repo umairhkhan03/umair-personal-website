@@ -12,12 +12,31 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 right-0 z-50 p-5 md:p-8">
+    <nav className="fixed top-0 left-0 right-0 z-50 p-5 md:p-8 flex justify-between items-center">
+      {/* Logo/Name in top left */}
+      <Link 
+        to="/" 
+        className="lowercase tracking-tight hover:opacity-60 transition-opacity font-bold"
+        style={{
+          fontSize: 'calc(var(--font-nav) * 2)',
+          letterSpacing: '-0.01em',
+          lineHeight: '1.2',
+          fontFeatureSettings: '"liga" on, "ss02" on',
+          WebkitFontSmoothing: 'antialiased'
+        }}
+      >
+        umair khan
+      </Link>
+
+      {/* Navigation Menu */}
       <NavigationMenu>
-        <NavigationMenuList className="gap-6 md:gap-8 text-nav">
+        <NavigationMenuList className="gap-6 md:gap-8">
           {/* Create Dropdown */}
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-transparent hover:opacity-60 data-[state=open]:opacity-60 text-nav p-0 h-auto">
+            <NavigationMenuTrigger 
+              className="bg-transparent hover:opacity-60 data-[state=open]:opacity-60 p-0 h-auto relative nav-item-underline"
+              style={{ fontSize: 'calc(var(--font-nav) * 1.2)' }}
+            >
               create.
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -58,7 +77,10 @@ const Navbar = () => {
 
           {/* Consume Dropdown */}
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-transparent hover:opacity-60 data-[state=open]:opacity-60 text-nav p-0 h-auto">
+            <NavigationMenuTrigger 
+              className="bg-transparent hover:opacity-60 data-[state=open]:opacity-60 p-0 h-auto relative nav-item-underline"
+              style={{ fontSize: 'calc(var(--font-nav) * 1.2)' }}
+            >
               consume.
             </NavigationMenuTrigger>
             <NavigationMenuContent>
