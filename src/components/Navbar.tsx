@@ -16,7 +16,7 @@ const Navbar = () => {
       {/* Logo/Name in top left */}
       <Link 
         to="/" 
-        className="lowercase tracking-tight hover:opacity-60 transition-opacity font-bold"
+        className="navbar-title lowercase tracking-tight hover:opacity-60 transition-opacity font-bold opacity-100 duration-500"
         style={{
           fontSize: 'calc(var(--font-nav) * 2)',
           letterSpacing: '-0.01em',
@@ -63,12 +63,12 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link
-                    to="/building"
+                    to="/projects"
                     className={`block hover:opacity-60 transition-opacity ${
-                      location.pathname === "/building" ? "opacity-60" : "opacity-100"
+                      location.pathname === "/projects" ? "opacity-60" : "opacity-100"
                     }`}
                   >
-                    building
+                    projects
                   </Link>
                 </li>
               </ul>
@@ -87,32 +87,22 @@ const Navbar = () => {
               <ul className="flex flex-col gap-2 p-4 w-[200px] bg-background border border-border">
                 <li>
                   <Link
-                    to="/life"
+                    to="/about"
                     className={`block hover:opacity-60 transition-opacity ${
-                      location.pathname === "/life" ? "opacity-60" : "opacity-100"
+                      location.pathname === "/about" ? "opacity-60" : "opacity-100"
                     }`}
                   >
-                    life
+                    about
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to="/blog"
+                    to="/content"
                     className={`block hover:opacity-60 transition-opacity ${
-                      location.pathname === "/blog" ? "opacity-60" : "opacity-100"
+                      location.pathname === "/content" ? "opacity-60" : "opacity-100"
                     }`}
                   >
-                    blog
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/watch-list"
-                    className={`block hover:opacity-60 transition-opacity ${
-                      location.pathname === "/watch-list" ? "opacity-60" : "opacity-100"
-                    }`}
-                  >
-                    watch list
+                    content
                   </Link>
                 </li>
               </ul>

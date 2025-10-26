@@ -5,7 +5,7 @@ import MarkdownRenderer from "@/components/content/MarkdownRenderer";
 import { loadMarkdownFile } from "@/lib/markdown";
 import { MarkdownContent } from "@/types/content";
 
-const PoemDetail = () => {
+const BlogDetail = () => {
   const { slug } = useParams();
   const [content, setContent] = useState<MarkdownContent | null>(null);
   const [loading, setLoading] = useState(true);
@@ -15,7 +15,7 @@ const PoemDetail = () => {
       if (!slug) return;
       
       setLoading(true);
-      const data = await loadMarkdownFile('poetry', slug);
+      const data = await loadMarkdownFile('blog', slug);
       setContent(data);
       setLoading(false);
     };
@@ -40,12 +40,12 @@ const PoemDetail = () => {
         <Navbar />
         <div className="min-h-screen flex items-center justify-center px-6">
           <div className="text-center">
-            <h1 className="text-heading font-bold mb-4">Poem Not Found</h1>
+            <h1 className="text-heading font-bold mb-4">Blog Post Not Found</h1>
             <Link 
-              to="/poetry" 
+              to="/blog" 
               className="text-nav underline hover:opacity-60 transition-opacity"
             >
-              Back to Poetry
+              Back to Blog
             </Link>
           </div>
         </div>
@@ -61,10 +61,10 @@ const PoemDetail = () => {
       <section className="pt-32 pb-12 px-6 md:px-16 lg:px-24">
         <div className="max-w-3xl">
           <Link 
-            to="/poetry"
+            to="/blog"
             className="text-nav text-muted-foreground hover:opacity-60 transition-opacity inline-block mb-8"
           >
-            ← Back to Poetry
+            ← Back to Blog
           </Link>
           
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -72,11 +72,15 @@ const PoemDetail = () => {
           </h1>
           
           <div className="flex gap-4 text-nav text-muted-foreground">
-            <span>{new Date(content.frontmatter.date).getFullYear()}</span>
-            {content.frontmatter.language && (
+            <span>{new Date(content.frontmatter.date).toLocaleDateString('en-US', { 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            })}</span>
+            {content.frontmatter.category && (
               <>
                 <span>·</span>
-                <span>{content.frontmatter.language}</span>
+                <span>{content.frontmatter.category}</span>
               </>
             )}
           </div>
@@ -93,4 +97,5 @@ const PoemDetail = () => {
   );
 };
 
-export default PoemDetail;
+export default BlogDetail;
+

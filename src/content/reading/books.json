@@ -1,0 +1,39 @@
+{
+  "currentlyReading": [
+    {
+      "title": "The Sympathizer",
+      "author": "Viet Thanh Nguyen",
+      "progress": 65,
+      "thoughts": "A brilliant exploration of identity and belonging through the lens of a Vietnamese refugee."
+    },
+    {
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "progress": 40,
+      "thoughts": "Practical insights on building sustainable habits and breaking bad ones."
+    }
+  ],
+  "wishlist": [
+    {
+      "title": "Tomorrow, and Tomorrow, and Tomorrow",
+      "author": "Gabrielle Zevin",
+      "reason": "Heard great things about this exploration of friendship and creativity in game development."
+    },
+    {
+      "title": "The Ministry of Time",
+      "author": "Kaliane Bradley",
+      "reason": "Time travel romance mixed with bureaucracy—sounds fascinating."
+    },
+    {
+      "title": "Dune Messiah",
+      "author": "Frank Herbert",
+      "reason": "Continuing the Dune saga after falling in love with the first book."
+    },
+    {
+      "title": "Exhalation",
+      "author": "Ted Chiang",
+      "reason": "Short stories that supposedly bend the mind—right up my alley."
+    }
+  ]
+}
+

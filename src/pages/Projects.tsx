@@ -1,16 +1,17 @@
 import Navbar from "@/components/Navbar";
 import ContentHero from "@/components/content/ContentHero";
 import ContentList from "@/components/content/ContentList";
-import blogData from "@/content/blog/posts.json";
+import projectsData from "@/content/projects/projects.json";
 
-const Blog = () => {
+const Projects = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <ContentHero title="BLOG" />
-      <ContentList items={blogData} basePath="/blog" />
+      <ContentHero title="PROJECTS" />
+      <ContentList items={projectsData} basePath="/projects" />
     </div>
   );
 };
 
-export default Blog;
+export default Projects;
+

@@ -1,8 +1,20 @@
 [
   {
-    "title": "Coming Soon",
-    "date": "2025-01-01",
-    "category": "Thoughts",
-    "slug": "coming-soon"
+    "title": "building a personal website in 2025",
+    "date": "2025-01-15",
+    "category": "Web Development",
+    "slug": "building-personal-website"
+  },
+  {
+    "title": "reflections on identity and belonging",
+    "date": "2024-09-22",
+    "category": "Personal",
+    "slug": "reflections-on-identity"
+  },
+  {
+    "title": "Mira - a reflection",
+    "date": "2024-06-10",
+    "category": "Personal Growth",
+    "slug": "lessons-from-failure"
   }
 ]

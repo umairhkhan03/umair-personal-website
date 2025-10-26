@@ -5,7 +5,7 @@ import MarkdownRenderer from "@/components/content/MarkdownRenderer";
 import { loadMarkdownFile } from "@/lib/markdown";
 import { MarkdownContent } from "@/types/content";
 
-const PoemDetail = () => {
+const ProjectDetail = () => {
   const { slug } = useParams();
   const [content, setContent] = useState<MarkdownContent | null>(null);
   const [loading, setLoading] = useState(true);
@@ -15,7 +15,7 @@ const PoemDetail = () => {
       if (!slug) return;
       
       setLoading(true);
-      const data = await loadMarkdownFile('poetry', slug);
+      const data = await loadMarkdownFile('projects', slug);
       setContent(data);
       setLoading(false);
     };
@@ -40,12 +40,12 @@ const PoemDetail = () => {
         <Navbar />
         <div className="min-h-screen flex items-center justify-center px-6">
           <div className="text-center">
-            <h1 className="text-heading font-bold mb-4">Poem Not Found</h1>
+            <h1 className="text-heading font-bold mb-4">Project Not Found</h1>
             <Link 
-              to="/poetry" 
+              to="/projects" 
               className="text-nav underline hover:opacity-60 transition-opacity"
             >
-              Back to Poetry
+              Back to Projects
             </Link>
           </div>
         </div>
@@ -61,25 +61,57 @@ const PoemDetail = () => {
       <section className="pt-32 pb-12 px-6 md:px-16 lg:px-24">
         <div className="max-w-3xl">
           <Link 
-            to="/poetry"
+            to="/projects"
             className="text-nav text-muted-foreground hover:opacity-60 transition-opacity inline-block mb-8"
           >
-            ← Back to Poetry
+            ← Back to Projects
           </Link>
           
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             {content.frontmatter.title}
           </h1>
           
-          <div className="flex gap-4 text-nav text-muted-foreground">
+          <div className="flex flex-wrap gap-4 text-nav text-muted-foreground mb-4">
             <span>{new Date(content.frontmatter.date).getFullYear()}</span>
-            {content.frontmatter.language && (
+            {content.frontmatter.category && (
               <>
                 <span>·</span>
-                <span>{content.frontmatter.language}</span>
+                <span>{content.frontmatter.category}</span>
+              </>
+            )}
+            {content.frontmatter.tech && (
+              <>
+                <span>·</span>
+                <span>{content.frontmatter.tech}</span>
               </>
             )}
           </div>
+
+          {/* Links */}
+          {(content.frontmatter.liveLink || content.frontmatter.githubLink) && (
+            <div className="flex gap-4 mt-6">
+              {content.frontmatter.liveLink && (
+                <a
+                  href={content.frontmatter.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-nav underline hover:opacity-60 transition-opacity"
+                >
+                  View Live →
+                </a>
+              )}
+              {content.frontmatter.githubLink && (
+                <a
+                  href={content.frontmatter.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-nav underline hover:opacity-60 transition-opacity"
+                >
+                  View Code →
+                </a>
+              )}
+            </div>
+          )}
         </div>
       </section>
 
@@ -93,4 +125,5 @@ const PoemDetail = () => {
   );
 };
 
-export default PoemDetail;
+export default ProjectDetail;
+

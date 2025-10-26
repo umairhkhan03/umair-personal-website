@@ -1,0 +1,45 @@
+{
+  "currentlyWatching": [
+    {
+      "title": "Severance",
+      "type": "TV Series",
+      "platform": "Apple TV+",
+      "season": "Season 2",
+      "thoughts": "The most thought-provoking show about work-life balance and corporate dystopia."
+    },
+    {
+      "title": "The Bear",
+      "type": "TV Series",
+      "platform": "Hulu",
+      "season": "Season 3",
+      "thoughts": "Anxiety-inducing in the best way. The kitchen chaos feels visceral."
+    }
+  ],
+  "watchlist": [
+    {
+      "title": "Poor Things",
+      "type": "Film",
+      "year": 2023,
+      "reason": "Emma Stone + Yorgos Lanthimos—need I say more?"
+    },
+    {
+      "title": "Past Lives",
+      "type": "Film",
+      "year": 2023,
+      "reason": "Heard it's a beautiful meditation on what could have been."
+    },
+    {
+      "title": "Shogun",
+      "type": "TV Series",
+      "platform": "Hulu",
+      "reason": "Historical epic about feudal Japan—looks visually stunning."
+    },
+    {
+      "title": "The Three-Body Problem",
+      "type": "TV Series",
+      "platform": "Netflix",
+      "reason": "Adaptation of one of my favorite sci-fi books."
+    }
+  ]
+}
+
