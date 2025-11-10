@@ -9,11 +9,11 @@ interface ContentListProps {
 const ContentList = ({ items, basePath }: ContentListProps) => {
   return (
     <section className="min-h-screen px-6 md:px-16 lg:px-24 py-20">
-      <div className="max-w-3xl">
+      <div className="max-w-3xl ml-8 md:ml-16 lg:ml-24">
         {items.map((item, index) => (
           <div 
             key={item.slug} 
-            className={`${index !== 0 ? 'mt-20 md:mt-24' : ''}`}
+            className={`${index !== 0 ? 'mt-10 md:mt-12' : ''}`}
           >
             <Link 
               to={`${basePath}/${item.slug}`}

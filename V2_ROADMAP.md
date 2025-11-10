@@ -90,6 +90,32 @@ An SVG-based signature animation that draws itself on screen, creating a persona
 
 ---
 
+### 5. Work Section Hover Image Preview
+**Goal**: Re-enable hover image previews for work items in the home page
+
+**Status**: Currently commented out - needs re-implementation
+
+**Features**:
+- Show image preview when hovering over work items (projects, blog posts, poetry)
+- Preview appears on the right side of the work list (desktop only)
+- Different preview images/SVGs for different items
+- Smooth transitions and animations
+
+**Technical Approach**:
+- Re-enable the commented-out preview section in `src/pages/Home.tsx`
+- Ensure hover state management works correctly
+- Add proper preview images/assets for each work item
+- Consider using actual project screenshots or thumbnails instead of placeholder SVGs
+- Optimize images for fast loading
+
+**Design Considerations**:
+- Keep preview subtle and non-intrusive
+- Ensure it doesn't interfere with scrolling or filter interactions
+- Mobile: Hide preview on mobile devices (already implemented)
+- Consider lazy loading preview images
+
+---
+
 ## Priority Ranking
 
 1. **High Priority**:
@@ -98,6 +124,7 @@ An SVG-based signature animation that draws itself on screen, creating a persona
 
 2. **Medium Priority**:
    - Performance optimizations
+   - Work Section Hover Image Preview
 
 3. **Nice to Have**:
    - Goodreads integration (depends on API availability)
