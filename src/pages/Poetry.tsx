@@ -7,7 +7,7 @@ const Poetry = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <ContentHero title="POETRY" />
+      <ContentHero title="poetry" />
       <ContentList items={poetryData} basePath="/poetry" />
     </div>
   );

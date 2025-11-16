@@ -7,7 +7,7 @@ const Projects = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <ContentHero title="PROJECTS" />
+      <ContentHero title="projects" />
       <ContentList items={projectsData} basePath="/projects" />
     </div>
   );

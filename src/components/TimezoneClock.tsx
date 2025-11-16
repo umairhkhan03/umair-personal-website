@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const TimezoneClock = () => {
   const [times, setTimes] = useState({
@@ -8,6 +8,13 @@ const TimezoneClock = () => {
   });
   
   const [hoveredCity, setHoveredCity] = useState<string | null>(null);
+  
+  // Track cumulative rotations to prevent reverse rotation on wrap-around
+  const rotationRefs = useRef({
+    riyadh: { hour: 0, minute: 0, second: 0 },
+    bhopal: { hour: 0, minute: 0, second: 0 },
+    manchester: { hour: 0, minute: 0, second: 0 },
+  });
 
   useEffect(() => {
     const updateTimes = () => {
@@ -31,21 +38,49 @@ const TimezoneClock = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const getRotation = (date: Date) => {
+  const getRotation = (date: Date, city: 'riyadh' | 'bhopal' | 'manchester') => {
     const hours = date.getHours() % 12;
     const minutes = date.getMinutes();
     const seconds = date.getSeconds();
 
+    const currentHour = (hours * 30) + (minutes * 0.5); // 30° per hour, 0.5° per minute
+    const currentMinute = (minutes * 6) + (seconds * 0.1); // 6° per minute, 0.1° per second
+    const currentSecond = seconds * 6; // 6° per second
+
+    // Track cumulative rotation to prevent reverse rotation on wrap-around
+    const prev = rotationRefs.current[city];
+    
+    // Helper function to handle wrap-around
+    const handleWrap = (current: number, previous: number) => {
+      // If current is significantly less than previous (wrap-around), add 360
+      if (current < previous - 180) {
+        return previous + (current + 360 - previous);
+      }
+      // Normal forward progression
+      return previous + (current - previous);
+    };
+    
+    const cumulativeSecond = handleWrap(currentSecond, prev.second);
+    const cumulativeMinute = handleWrap(currentMinute, prev.minute);
+    const cumulativeHour = handleWrap(currentHour, prev.hour);
+
+    // Update refs
+    rotationRefs.current[city] = {
+      hour: cumulativeHour,
+      minute: cumulativeMinute,
+      second: cumulativeSecond,
+    };
+
     return {
-      hour: (hours * 30) + (minutes * 0.5), // 30° per hour, 0.5° per minute
-      minute: (minutes * 6) + (seconds * 0.1), // 6° per minute, 0.1° per second
-      second: seconds * 6, // 6° per second
+      hour: cumulativeHour,
+      minute: cumulativeMinute,
+      second: cumulativeSecond,
     };
   };
 
-  const riyadhAngles = getRotation(times.riyadh);
-  const bhopalAngles = getRotation(times.bhopal);
-  const manchesterAngles = getRotation(times.manchester);
+  const riyadhAngles = getRotation(times.riyadh, 'riyadh');
+  const bhopalAngles = getRotation(times.bhopal, 'bhopal');
+  const manchesterAngles = getRotation(times.manchester, 'manchester');
 
   return (
     <div className="flex flex-col items-center gap-12 animate-fade-in">
@@ -241,9 +276,9 @@ const TimezoneClock = () => {
       </div>
 
       {/* Time Labels - Equal spacing with Bhopal centered */}
-      <div className="w-full max-w-3xl flex justify-between items-center text-center">
+      <div className="w-full max-w-3xl flex justify-between items-start text-center">
         <div 
-          className="flex-1 space-y-1 cursor-pointer transition-all duration-300"
+          className="flex-1 cursor-pointer transition-all duration-300"
           onMouseEnter={() => setHoveredCity('riyadh')}
           onMouseLeave={() => setHoveredCity(null)}
           style={{
@@ -251,8 +286,9 @@ const TimezoneClock = () => {
             transform: hoveredCity === 'riyadh' ? 'scale(1.05)' : 'scale(1)'
           }}
         >
-          <div className="text-sm text-muted-foreground uppercase tracking-wide">Riyadh</div>
-          <div className="font-mono text-base" style={{ opacity: 0.25 }}>
+          <div className="h-5"></div>
+          <div className="text-sm text-muted-foreground tracking-wide">riyadh</div>
+          <div className="font-mono text-base mt-1" style={{ opacity: 0.25 }}>
             {times.riyadh.toLocaleTimeString('en-US', { 
               hour: '2-digit', 
               minute: '2-digit',
@@ -262,7 +298,7 @@ const TimezoneClock = () => {
         </div>
         
         <div 
-          className="flex-1 space-y-1 cursor-pointer transition-all duration-300"
+          className="flex-1 cursor-pointer transition-all duration-300"
           onMouseEnter={() => setHoveredCity('bhopal')}
           onMouseLeave={() => setHoveredCity(null)}
           style={{
@@ -270,8 +306,9 @@ const TimezoneClock = () => {
             transform: hoveredCity === 'bhopal' ? 'scale(1.05)' : 'scale(1)'
           }}
         >
-          <div className="text-sm text-muted-foreground uppercase tracking-wide">Bhopal</div>
-          <div className="font-mono text-base" style={{ opacity: 0.45 }}>
+          <div className="h-5"></div>
+          <div className="text-sm text-muted-foreground tracking-wide">bhopal</div>
+          <div className="font-mono text-base mt-1" style={{ opacity: 0.45 }}>
             {times.bhopal.toLocaleTimeString('en-US', { 
               hour: '2-digit', 
               minute: '2-digit',
@@ -281,7 +318,7 @@ const TimezoneClock = () => {
         </div>
         
         <div 
-          className="flex-1 space-y-1 cursor-pointer transition-all duration-300"
+          className="flex-1 cursor-pointer transition-all duration-300 relative"
           onMouseEnter={() => setHoveredCity('manchester')}
           onMouseLeave={() => setHoveredCity(null)}
           style={{
@@ -290,8 +327,9 @@ const TimezoneClock = () => {
             marginLeft: '2px'
           }}
         >
-          <div className="text-sm text-muted-foreground uppercase tracking-wide">Manchester</div>
-          <div className="font-mono text-base" style={{ opacity: 0.7 }}>
+          <div className="text-xs text-muted-foreground h-5 flex items-end justify-center" style={{ opacity: 0.5 }}>here today!</div>
+          <div className="text-sm text-muted-foreground tracking-wide">manchester</div>
+          <div className="font-mono text-base mt-1" style={{ opacity: 0.7 }}>
             {times.manchester.toLocaleTimeString('en-US', { 
               hour: '2-digit', 
               minute: '2-digit',

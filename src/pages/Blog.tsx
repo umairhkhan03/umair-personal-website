@@ -7,7 +7,7 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <ContentHero title="BLOG" />
+      <ContentHero title="blog" />
       <ContentList items={blogData} basePath="/blog" />
     </div>
   );

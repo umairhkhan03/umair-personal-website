@@ -4,6 +4,7 @@ export interface ContentItem {
   language?: string;
   category?: string;
   slug: string;
+  externalLink?: string;
 }
 
 export interface ContentConfig {

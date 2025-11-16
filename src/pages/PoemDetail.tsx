@@ -28,7 +28,7 @@ const PoemDetail = () => {
       <div className="min-h-screen bg-background">
         <Navbar />
         <div className="min-h-screen flex items-center justify-center">
-          <p className="text-body">Loading...</p>
+          <p className="text-body">loading...</p>
         </div>
       </div>
     );
@@ -40,12 +40,12 @@ const PoemDetail = () => {
         <Navbar />
         <div className="min-h-screen flex items-center justify-center px-6">
           <div className="text-center">
-            <h1 className="text-heading font-bold mb-4">Poem Not Found</h1>
+            <h1 className="text-heading font-bold mb-4">poem not found</h1>
             <Link 
               to="/poetry" 
               className="text-nav underline hover:opacity-60 transition-opacity"
             >
-              Back to Poetry
+              back to poetry
             </Link>
           </div>
         </div>
@@ -64,7 +64,7 @@ const PoemDetail = () => {
             to="/poetry"
             className="text-nav text-muted-foreground hover:opacity-60 transition-opacity inline-block mb-8"
           >
-            ← Back to Poetry
+            ← back to poetry
           </Link>
           
           <h1 className="text-4xl md:text-5xl font-bold mb-4">

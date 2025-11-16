@@ -28,7 +28,7 @@ const ProjectDetail = () => {
       <div className="min-h-screen bg-background">
         <Navbar />
         <div className="min-h-screen flex items-center justify-center">
-          <p className="text-body">Loading...</p>
+          <p className="text-body">loading...</p>
         </div>
       </div>
     );
@@ -40,12 +40,12 @@ const ProjectDetail = () => {
         <Navbar />
         <div className="min-h-screen flex items-center justify-center px-6">
           <div className="text-center">
-            <h1 className="text-heading font-bold mb-4">Project Not Found</h1>
+            <h1 className="text-heading font-bold mb-4">project not found</h1>
             <Link 
               to="/projects" 
               className="text-nav underline hover:opacity-60 transition-opacity"
             >
-              Back to Projects
+              back to projects
             </Link>
           </div>
         </div>
@@ -64,7 +64,7 @@ const ProjectDetail = () => {
             to="/projects"
             className="text-nav text-muted-foreground hover:opacity-60 transition-opacity inline-block mb-8"
           >
-            ← Back to Projects
+            ← back to projects
           </Link>
           
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -97,7 +97,7 @@ const ProjectDetail = () => {
                   rel="noopener noreferrer"
                   className="text-nav underline hover:opacity-60 transition-opacity"
                 >
-                  View Live →
+                  view live →
                 </a>
               )}
               {content.frontmatter.githubLink && (
@@ -107,7 +107,7 @@ const ProjectDetail = () => {
                   rel="noopener noreferrer"
                   className="text-nav underline hover:opacity-60 transition-opacity"
                 >
-                  View Code →
+                  view code →
                 </a>
               )}
             </div>
