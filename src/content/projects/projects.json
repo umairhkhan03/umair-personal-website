@@ -1,21 +1,10 @@
 [
   {
-    "title": "TaskFlow - Smart Task Manager",
-    "date": "2024-12-01",
-    "category": "Productivity",
-    "slug": "task-flow"
-  },
-  {
-    "title": "Poetry Archive - Digital Poetry Platform",
-    "date": "2024-08-20",
-    "category": "Creative Tech",
-    "slug": "poetry-archive"
-  },
-  {
-    "title": "Climate Data Visualizer",
-    "date": "2024-03-15",
-    "category": "Data Visualization",
-    "slug": "climate-visualizer"
+    "title": "Mira",
+    "date": "2025-07-01",
+    "category": "July-Sept 2025 · London",
+    "slug": "mira",
+    "externalLink": "https://askmira.co"
   }
 ]
 

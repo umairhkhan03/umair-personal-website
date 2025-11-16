@@ -8,119 +8,42 @@ const About = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-6 md:px-16 lg:px-24">
         <div className="max-w-3xl">
-          <h1 className="text-5xl md:text-6xl font-bold mb-8">About Me</h1>
-          <p className="text-xl md:text-2xl text-muted-foreground">
-            A journey across continents, languages, and perspectives.
+          <h1 className="text-5xl md:text-6xl font-bold ">about</h1>
+        </div>
+      </section>
+
+      {/* Content Section */}
+      <section className="px-6 md:px-16 lg:px-24 pb-32">
+        <div className="max-w-3xl space-y-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">me:</h2>
+          
+          <p className="text-base md:text-lg text-foreground mb-4">
+            i'm an engineer through university but the uk banks got me defecting to finance :'D
+            <br />
+            <br />
+            i grew up as a tck (third culture kid) in saudi arabia and india, now based in the uk.
+            <br />
+            <br />
+            i'll write up some more cool experiences and learnings soon.
           </p>
-        </div>
-      </section>
-
-      {/* Background Section */}
-      <section className="py-16 px-6 md:px-16 lg:px-24">
-        <div className="max-w-3xl space-y-6">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6">Background</h2>
           
-          <p className="text-body leading-relaxed">
-                ...
-              </p>
-        </div>
-      </section>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">this website:</h2>
 
-      {/* Defining Experiences Section */}
-      <section className="py-16 px-6 md:px-16 lg:px-24 bg-muted/20">
-        <div className="max-w-3xl space-y-6">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6">Defining Experiences</h2>
-          
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-3">The Third Culture Kid Experience</h3>
-              <p className="text-body leading-relaxed">
-                ...
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Language as Home</h3>
-              <p className="text-body leading-relaxed">
-                I think in English, dream in multiple languages, and feel certain emotions most deeply 
-                in Urdu. Each language carries different parts of my identity, ...
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Building & Creating</h3>
-              <p className="text-body leading-relaxed">
-                ...
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Interests Section */}
-      <section className="py-16 px-6 md:px-16 lg:px-24">
-        <div className="max-w-3xl space-y-6">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6">What I Like</h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Creative Pursuits</h3>
-              <p className="text-body leading-relaxed">
-                ...
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Intellectual Interests</h3>
-              <p className="text-body leading-relaxed">
-                ...
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Media & Culture</h3>
-              <p className="text-body leading-relaxed">
-                ...
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Simple Pleasures</h3>
-              <p className="text-body leading-relaxed">
-                ...
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* What I Don't Like Section */}
-      <section className="py-16 px-6 md:px-16 lg:px-24 bg-muted/20">
-        <div className="max-w-3xl space-y-6">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6">What I Don't Like</h2>
-          
-          <p className="text-body leading-relaxed">
-                ...
-              </p>
-          
-              <p className="text-body leading-relaxed">
-                ...
-              </p>
-        </div>
-      </section>
-
-      {/* Current Chapter Section */}
-      <section className="py-16 px-6 md:px-16 lg:px-24 pb-32">
-        <div className="max-w-3xl space-y-6">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6">Current Chapter</h2>
-          
-          <p className="text-body leading-relaxed">
-                ...
-              </p>
-          
-          <p className="text-body leading-relaxed">
-            This website is part of that journey—a space to document, create, and share. It's a work 
-            in progress, much like myself.
+          <p className="text-base md:text-lg text-foreground">
+            i built this website after listening to a talk from tim berners lee - the founder of the web (www.com and hence the internet) at a talk in london tech week. 
+            <br />
+            <br />
+            he explained his true intention behind building the internet was so for people to build their own personal websites on it. 
+            <br />
+            <br />
+            to explore and connect with others across the world. 
+            <br />
+            <br />
+            to build your own unique page that showcases your individuality and helps you learn about other human beings and their little corners of the world that were once only found through books. 
+            <br />
+            <br />
+            kinda like facebook - but without personality quizzes telling you which type of potato you are...
+            <br />
           </p>
         </div>
       </section>

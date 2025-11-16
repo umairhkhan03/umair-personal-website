@@ -1,38 +1,58 @@
 {
   "currentlyReading": [
     {
-      "title": "The Sympathizer",
-      "author": "Viet Thanh Nguyen",
-      "progress": 65,
-      "thoughts": "A brilliant exploration of identity and belonging through the lens of a Vietnamese refugee."
-    },
-    {
-      "title": "Atomic Habits",
-      "author": "James Clear",
-      "progress": 40,
-      "thoughts": "Practical insights on building sustainable habits and breaking bad ones."
+      "title": "The Personal MBA: Master the Art of Business",
+      "author": "Josh Kaufman"
     }
   ],
   "wishlist": [
     {
-      "title": "Tomorrow, and Tomorrow, and Tomorrow",
-      "author": "Gabrielle Zevin",
-      "reason": "Heard great things about this exploration of friendship and creativity in game development."
+      "title": "One Thing",
+      "author": "Gary Keller"
     },
     {
-      "title": "The Ministry of Time",
-      "author": "Kaliane Bradley",
-      "reason": "Time travel romance mixed with bureaucracy—sounds fascinating."
+      "title": "One Day, Everyone Will Have Always Been Against This",
+      "author": "Omar El Akkad"
     },
     {
-      "title": "Dune Messiah",
-      "author": "Frank Herbert",
-      "reason": "Continuing the Dune saga after falling in love with the first book."
+      "title": "And Then There Were None",
+      "author": "Agatha Christie"
     },
     {
-      "title": "Exhalation",
-      "author": "Ted Chiang",
-      "reason": "Short stories that supposedly bend the mind—right up my alley."
+      "title": "1984",
+      "author": "George Orwell"
+    },
+    {
+      "title": "Animal Farm",
+      "author": "George Orwell"
+    },
+    {
+      "title": "Invention: A Life",
+      "author": "James Dyson"
+    },
+    {
+      "title": "Zero to One: Notes on Startups, or How to Build the Future",
+      "author": "Peter Thiel"
+    },
+    {
+      "title": "Islam and the Destiny of Man",
+      "author": "Charles Le Gai Eaton"
+    },
+    {
+      "title": "The Road to Mecca",
+      "author": "Muhammad Asad"
+    },
+    {
+      "title": "Siddharta",
+      "author": "Hermann Hesse"
+    },
+    {
+      "title": "Muhammad: His Life Based on the Earliest Sources",
+      "author": "Martin Lings"
+    },
+    {
+      "title": "The Hard Thing About Hard Things",
+      "author": "Ben Horowitz"
     }
   ]
 }
