@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Pure minimalist palette - black on white (inverted) */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 0 0% 90%;
+    --accent-foreground: 0 0% 0%;
+
+    --border: 0 0% 80%;
+    --input: 0 0% 80%;
+    --ring: 0 0% 0%;
+
+    --radius: 0;
+    
+    /* Typography scale */
+    --font-hero: 33.6vw;
+    --font-heading: clamp(2rem, 5vw, 4rem);
+    --font-body: clamp(1rem, 1.5vw, 1.125rem);
+    --font-nav: 0.875rem;
+    
+    /* Spacing */
+    --space-section: clamp(4rem, 10vh, 8rem);
+    --space-nav: 1.25rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-hero {
+    font-size: var(--font-hero);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+  }
+
+  .text-heading {
+    font-size: var(--font-heading);
+    line-height: 1.2;
+  }
+
+  .text-body {
+    font-size: var(--font-body);
+    line-height: 1.6;
+  }
+
+  .text-nav {
+    font-size: var(--font-nav);
+    letter-spacing: 0.02em;
+  }
+
+  /* Animated underline for navigation items */
+  .nav-item-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: hsl(var(--foreground));
+    transition: width 0.3s ease-in-out;
+    transform-origin: left;
+  }
+
+  .nav-item-underline:hover::after,
+  .nav-item-underline[data-state="open"]::after {
+    width: 100%;
+    transform-origin: left;
+  }
+  
+  .nav-item-underline:not(:hover):not([data-state="open"])::after {
+    transform-origin: right;
+  }
+
+  /* Fade in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  /* Clock Animation */
+  .clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .clock {
+    width: 120px;
+    height: 120px;
+    border: 2px solid hsl(var(--foreground));
+    border-radius: 50%;
+    position: relative;
+    background-color: transparent;
+  }
+
+  .clock-hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+    background-color: hsl(var(--foreground));
+    border-radius: 2px;
+  }
+
+  .hour-hand {
+    width: 3px;
+    height: 30px;
+    margin-left: -1.5px;
+    animation: rotate-hour 43200s linear infinite;
+  }
+
+  .minute-hand {
+    width: 2px;
+    height: 40px;
+    margin-left: -1px;
+    animation: rotate-minute 3600s linear infinite;
+  }
+
+  .second-hand {
+    width: 1px;
+    height: 45px;
+    margin-left: -0.5px;
+    background-color: hsl(0 0% 60%);
+    animation: rotate-second 60s linear infinite;
+  }
+
+  .clock-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: hsl(var(--foreground));
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes rotate-hour {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes rotate-minute {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes rotate-second {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "title": "today I built my website",
+    "date": "2025-01-15",
+    "category": "Web Development",
+    "slug": "building-personal-website"
+  },
+  {
+    "title": "today I built an app",
+    "date": "2024-06-10",
+    "category": "Personal Growth",
+    "slug": "lessons-from-failure"
+  },
+  {
+    "title": "today I ran a half marathon",
+    "date": "2025-01-20",
+    "category": "Personal",
+    "slug": "half-marathon"
+  }
+]
