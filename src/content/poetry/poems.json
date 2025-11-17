@@ -6,12 +6,6 @@
     "slug": "ghalib-the-conqueror"
   },
   {
-    "title": "Sunset",
-    "date": "2024-01-01",
-    "language": "Urdu",
-    "slug": "sunset"
-  },
-  {
     "title": "Irshaad-e-dil",
     "date": "2024-01-01",
     "language": "Urdu",
@@ -28,6 +22,12 @@
     "date": "2023-01-01",
     "language": "Urdu",
     "slug": "dreams-in-a-coffin"
+  },
+  {
+    "title": "Sunset",
+    "date": "2022-01-01",
+    "language": "Urdu",
+    "slug": "sunset"
   },
   {
     "title": "Red Sunglasses",

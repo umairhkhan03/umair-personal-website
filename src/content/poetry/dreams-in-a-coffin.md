@@ -16,6 +16,6 @@ in khwaabon ko mere dil ke aik koney mai dafan kardiya.
 
 ye dil jab aik din zindagi ki rozzamarii mai gum gaya, 
 
-to us dil ke koney ki khayaal ne usey ujaala de diya.
+to us dil ke koney ke khayaal ne usey ujaala de diya.
 
 
