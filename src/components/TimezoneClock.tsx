@@ -1,6 +1,10 @@
 import { useEffect, useState, useRef } from "react";
 
-const TimezoneClock = () => {
+interface TimezoneClockProps {
+  scrollPosition?: number;
+}
+
+const TimezoneClock = ({ scrollPosition = 0 }: TimezoneClockProps) => {
   const [times, setTimes] = useState({
     riyadh: new Date(),
     bhopal: new Date(),
@@ -82,8 +86,22 @@ const TimezoneClock = () => {
   const bhopalAngles = getRotation(times.bhopal, 'bhopal');
   const manchesterAngles = getRotation(times.manchester, 'manchester');
 
+  // Calculate scale based on scroll position (shrink as you scroll down)
+  // Scale from 1.0 at scroll 0 to ~0.4 at scroll 800px
+  const maxScroll = 800;
+  const minScale = 0.4;
+  const scaleProgress = Math.min(1, scrollPosition / maxScroll);
+  const scale = 1 - (scaleProgress * (1 - minScale));
+
   return (
-    <div className="flex flex-col items-center gap-12 animate-fade-in">
+    <div 
+      className="flex flex-col items-center gap-12 animate-fade-in transition-transform duration-300 ease-out" 
+      style={{ 
+        transform: `scale(${scale})`,
+        transformOrigin: 'center center',
+        willChange: 'transform'
+      }}
+    >
       {/* Clock Container */}
       <div className="relative w-64 h-64 md:w-80 md:h-80">
         <svg className="w-full h-full" viewBox="0 0 200 200">

@@ -58,7 +58,7 @@ const BlogDetail = () => {
       <Navbar />
       
       {/* Header */}
-      <section className="pt-32 pb-12 px-6 md:px-16 lg:px-24">
+      <section className="pt-32 pb-12 px-14 md:px-24 lg:px-32">
         <div className="max-w-3xl">
           <Link 
             to="/blog"
@@ -88,7 +88,7 @@ const BlogDetail = () => {
       </section>
 
       {/* Content */}
-      <section className="pb-20 px-6 md:px-16 lg:px-24">
+      <section className="pb-20 px-14 md:px-24 lg:px-32">
         <div className="max-w-3xl">
           <MarkdownRenderer content={content.content} />
         </div>

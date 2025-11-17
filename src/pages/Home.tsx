@@ -5,28 +5,44 @@ import TimezoneClock from "@/components/TimezoneClock";
 
 const Home = () => {
   const [showScrollContent, setShowScrollContent] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
+      const scrollPos = window.scrollY;
       
-      // Hide navbar title when scrolled past 200px
-      const navbarTitle = document.querySelector('.navbar-title');
-      if (navbarTitle) {
-        if (scrollPosition > 200) {
-          navbarTitle.classList.add('opacity-0');
-          navbarTitle.classList.remove('opacity-100');
-        } else {
-          navbarTitle.classList.add('opacity-100');
-          navbarTitle.classList.remove('opacity-0');
-        }
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrollPosition(scrollPos);
+          
+          // Hide navbar title when scrolled past 200px
+          const navbarTitle = document.querySelector('.navbar-title');
+          if (navbarTitle) {
+            if (scrollPos > 200) {
+              navbarTitle.classList.add('opacity-0');
+              navbarTitle.classList.remove('opacity-100');
+            } else {
+              navbarTitle.classList.add('opacity-100');
+              navbarTitle.classList.remove('opacity-0');
+            }
+          }
+          
+          // Show content below clock when scrolled past 300px
+          setShowScrollContent(scrollPos > 300);
+          
+          ticking = false;
+        });
+        
+        ticking = true;
       }
-      
-      // Show content below clock when scrolled past 300px
-      setShowScrollContent(scrollPosition > 300);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // Call immediately to set initial scroll position
+    handleScroll();
+    
+    window.addEventListener("scroll", handleScroll, { passive: true });
     
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -38,10 +54,10 @@ const Home = () => {
       <Navbar />
 
       {/* Hero/Intro Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center px-6 md:px-16 pt-44">
+      <section className="min-h-screen flex flex-col items-center justify-center px-14 md:px-24 lg:px-32 pt-44">
         <div className="max-w-6xl w-full flex flex-col items-center gap-40">
           {/* Timezone Clock */}
-          <TimezoneClock />
+          <TimezoneClock scrollPosition={scrollPosition} />
 
           {/* Content that appears on scroll */}
           <div 
@@ -75,26 +91,19 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 text-center px-6">
-        <p className="text-nav text-muted-foreground mb-4">
-          © umair 2025
-        </p>
-        <div className="flex justify-center gap-4 text-sm">
-          <Link to="/about" className="hover:opacity-60 transition-opacity">
-            about
-          </Link>
-          <span className="text-muted-foreground">·</span>
-          <Link to="/projects" className="hover:opacity-60 transition-opacity">
-            projects
-          </Link>
-          <span className="text-muted-foreground">·</span>
-          <Link to="/blog" className="hover:opacity-60 transition-opacity">
-            blog
-          </Link>
-          <span className="text-muted-foreground">·</span>
-          <Link to="/poetry" className="hover:opacity-60 transition-opacity">
-            poetry
-          </Link>
+      <footer className="py-12 px-14 md:px-24 lg:px-32">
+        <div className="flex justify-between items-center">
+          <a 
+            href="https://www.linkedin.com/in/umair-h-khan/" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-nav text-muted-foreground hover:opacity-60 transition-opacity"
+          >
+            say hi on linkedin
+          </a>
+          <p className="text-nav text-muted-foreground">
+            © umair khan 2025
+          </p>
         </div>
       </footer>
     </div>

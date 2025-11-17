@@ -8,7 +8,7 @@ interface ContentListProps {
 
 const ContentList = ({ items, basePath }: ContentListProps) => {
   return (
-    <section className="min-h-screen px-6 md:px-16 lg:px-24 py-20">
+    <section className="min-h-screen px-14 md:px-24 lg:px-32 py-20">
       <div className="max-w-3xl ml-8 md:ml-16 lg:ml-24">
         {items.map((item, index) => {
           const content = (
