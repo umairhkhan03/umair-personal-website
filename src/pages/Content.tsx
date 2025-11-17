@@ -14,7 +14,7 @@ const Content = () => {
           {/* Currently Reading */}
           <div>
             <h2 className="text-3xl font-semibold mb-6">currently reading</h2>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               {booksData.currentlyReading.map((book, index) => (
                 <li key={index} className="text-body">
                   <span className="font-semibold">{book.title}</span> by {book.author}
@@ -23,7 +23,7 @@ const Content = () => {
             </ul>
           </div>
 
-          {/* Reading Wishlist */}
+          {/* Wishlist */}
           <div>
             <h2 className="text-3xl font-semibold mb-6">wishlist</h2>
             <ul className="space-y-3">

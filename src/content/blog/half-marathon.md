@@ -24,17 +24,17 @@ insane.
 
 and somehow I kept moving. 
 
-My friend and coach - Noah - once told me, “No one runs because they want to run,” and honestly, it hit me that day. He’s right. 
+My friend and coach - Noah - once told me, "No one runs because they want to run," and honestly, it hit me that day. He's right. 
 
-I don’t run because it’s fun. 
+I don't run because it's fun. 
 
 I run because doing something hard changes me. 
 
 It forces me to show up when every part of me is saying anything but get up. 
 
-Choosing discomfort and turning it into growth, choosing effort and turning it into joy, that’s the bit that sticks.
+Choosing discomfort and turning it into growth, choosing effort and turning it into joy, that's the bit that sticks.
 
-I’ve realised my biggest growth always came from doing the difficult things. 
+I've realised my biggest growth always came from doing the difficult things. 
 
 And not being afraid to fail.
 
@@ -46,5 +46,5 @@ When my body says yes, I say no.
 
 And honestly,
 
-that’s where unparalleled levels of happiness lie.
+that's where unparalleled levels of happiness lie.
 
